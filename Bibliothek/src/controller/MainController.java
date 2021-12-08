@@ -16,6 +16,7 @@ public class MainController {
         buecher.add(new Fantasie(857, 12564, 1, "Drachen"));
         buecher.add(new Kinder(24, 62747, 0 , true));
         buecher.add(new Kinder(68, 78348, 12, false));
+        buecher.add(new Wissen(783, 2378, "Universum", 1982));
         
         //Dienstleistungsmethode 1
         for(Buecher buch : buecher){
@@ -43,6 +44,8 @@ public class MainController {
             }
         }
         _o.printData("Das Buch mit den meisten Monstern hat " + maxMonster + " Monsterarten!");
+
+        System.out.println(" ");
 
     }
 }
