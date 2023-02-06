@@ -1,9 +1,14 @@
 package controller;
 
-import model.*;
-import view.*;
-
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Random;
+
+import model.Buecher;
+import model.Fantasie;
+import model.Kinder;
+import model.Wissen;
+import view.Output;
 
 public class MainController {
     
@@ -47,5 +52,49 @@ public class MainController {
 
         System.out.println(" ");
 
+        someSort();
+    }
+
+    public static void someSort(){
+        int[] numbers = new int[100000];
+        Random rand = new Random();
+        for(int i = 0; i < numbers.length; i++){
+            numbers[i] = rand.nextInt((10000 - 0) + 1) + 0;
+        }
+
+
+
+        Timestamp timestampStart = new Timestamp(System.currentTimeMillis());
+        for (int i=0;i<numbers.length-1;i++){
+            System.out.println("Durchlauf " + i + " von " + (numbers.length-1));
+            for (int k=0;k<numbers.length-i-1;k++){
+                if(numbers[k+1]<numbers[k]){
+                    int temp = numbers[k];
+                    numbers[k] = numbers[k+1];
+                    numbers[k+1] = temp;
+                }
+            }
+        }
+        Timestamp timestampStop = new Timestamp(System.currentTimeMillis());
+
+
+        long tEnde = timestampStop.getTime();
+        long tStart = timestampStart.getTime();
+
+        long tFinal = (tEnde - tStart)/1000;
+
+        System.out.println("--------------------------------");
+
+        System.out.println(tFinal);
+        
+
+    }
+
+
+    private static void printArr(int[] arr){
+        System.out.println("--------------------------------");
+        for(int i = 0; i < arr.length;i++){
+            System.out.println(arr[i]);
+        }
     }
 }
