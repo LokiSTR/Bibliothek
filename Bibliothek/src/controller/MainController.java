@@ -1,3 +1,4 @@
+/*
 package controller;
 
 import java.sql.Timestamp;
@@ -90,7 +91,6 @@ public class MainController {
 
     }
 
-
     private static void printArr(int[] arr){
         System.out.println("--------------------------------");
         for(int i = 0; i < arr.length;i++){
@@ -98,3 +98,5 @@ public class MainController {
         }
     }
 }
+
+*/
